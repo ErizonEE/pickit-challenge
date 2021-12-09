@@ -1,0 +1,24 @@
+version: "3.7"
+  
+services:
+  frontend:
+    image: node:14
+    working_dir: /app
+    entrypoint: yarn start
+    volumes:
+      - ./frontend:/app
+    ports:
+      - 8080:3000
+  backend:
+    image: node:14
+    working_dir: /app
+    entrypoint: yarn start
+    volumes:
+      - ./api:/app/
+    ports:
+      - 8000:3000
+  # Infrastructure Services
+  database: 
+    image: mysql
+    environment:
+      - MYSQL_ROOT_PASSWORD=secret
