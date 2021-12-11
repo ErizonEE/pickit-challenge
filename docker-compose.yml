@@ -13,6 +13,8 @@ services:
     image: node:14
     working_dir: /app
     entrypoint: yarn start
+    depends_on:
+      - database
     volumes:
       - ./api:/app/
     ports:
@@ -22,3 +24,4 @@ services:
     image: mysql
     environment:
       - MYSQL_ROOT_PASSWORD=secret
+      - MYSQL_DATABASE=pickit
