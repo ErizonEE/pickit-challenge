@@ -9,7 +9,7 @@ services:
       - ./frontend:/app
     ports:
       - 8080:3000
-  backend:
+  api:
     image: node:14
     working_dir: /app
     entrypoint: yarn start
