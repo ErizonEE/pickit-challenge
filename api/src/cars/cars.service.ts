@@ -39,13 +39,13 @@ export class CarsService {
   }
 
   async update(id: string, updateCarDto: UpdateCarDto) {
-    const car = await this.carRepository.findOne({ id });
+    let car = await this.carRepository.findOne({ id });
 
     if(!car) {
       throw new NotFoundException("Car Resource Not Found");
     }
-    
-    this.carRepository.merge(car, updateCarDto);
+
+    car = this.carRepository.merge(car, updateCarDto);
 
     return this.carRepository.save(car);
   }
