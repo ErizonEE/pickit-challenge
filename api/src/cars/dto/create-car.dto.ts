@@ -1,12 +1,14 @@
-import { IsString, IsNotEmpty, IsNumber, IsPositive } from "class-validator";
+import { IsString, IsNotEmpty, IsNumber, IsPositive, MaxLength } from "class-validator";
 
 export class CreateCarDto {
   @IsString()
   @IsNotEmpty()
+  @MaxLength(255)
   readonly brand: string;
 
   @IsString()
   @IsNotEmpty()
+  @MaxLength(255)
   readonly model: string;
 
   @IsNumber()
@@ -14,11 +16,13 @@ export class CreateCarDto {
   @IsNotEmpty()
   readonly year: number;
 
-  @IsString()
+  @IsString({ })
   @IsNotEmpty()
+  @MaxLength(10)
   readonly patent: string;
 
   @IsString()
   @IsNotEmpty()
+  @MaxLength(255)
   readonly color: string;
 }

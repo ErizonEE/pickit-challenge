@@ -1,22 +1,22 @@
-import { PrimaryGeneratedColumn, Column, Entity, Unique } from 'typeorm';
+import { PrimaryGeneratedColumn, Column, Entity } from 'typeorm';
 
 @Entity()
 export class Car {
   @PrimaryGeneratedColumn('uuid')
-  id: string;
+  readonly id: string;
 
   @Column({type: 'varchar', length: 255})
-  brand: string;
+  readonly brand: string;
 
   @Column({type: 'varchar', length: 255})
-  model: string;
+  readonly model: string;
 
   @Column({type: 'int'})
-  year: number;
+  readonly year: number;
   
   @Column({type: 'varchar', length: 10, unique: true})
-  patent: string;
+  readonly patent: string;
 
   @Column({type: 'varchar', length: 255})
-  color: string;
+  readonly color: string;
 }
