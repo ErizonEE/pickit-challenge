@@ -1,6 +1,16 @@
-import { IsString, IsNotEmpty, IsNumber, IsPositive, MaxLength } from "class-validator";
+import { IsString, IsNotEmpty, IsNumber, IsPositive, MaxLength, IsOptional } from "class-validator";
 
 export class CreateCarDto {
+  @IsString()
+  @IsNotEmpty()
+  @MaxLength(255)
+  readonly ownerId: string;
+
+  @IsString()
+  @IsOptional()
+  @MaxLength(255)
+  readonly ownerName: string;
+
   @IsString()
   @IsNotEmpty()
   @MaxLength(255)

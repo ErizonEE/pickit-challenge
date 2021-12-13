@@ -13,4 +13,10 @@ export class Owner {
 
   @Column({type:"int", unique: true, nullable: true})
   readonly documentNumber: number;
+
+  @Column({ type: "int", default: 0 })
+  totalCars: number;
+
+  @Column({ type: "int", default: 0 })
+  totalTransactions: number;
 }

@@ -19,4 +19,10 @@ export class Car {
 
   @Column({type: 'varchar', length: 255})
   readonly color: string;
+
+  @Column({ type: 'varchar' })
+  readonly ownerId: string;
+
+  @Column({ type: 'varchar', nullable: true })
+  ownerName: string;
 }
