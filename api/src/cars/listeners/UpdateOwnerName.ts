@@ -2,7 +2,7 @@
 import { Injectable } from '@nestjs/common';
 import { OnEvent } from '@nestjs/event-emitter';
 import { InjectRepository } from '@nestjs/typeorm';
-import { Owner } from 'src/owners/entities/owner.entity';
+import { Owner } from '../../owners/entities/owner.entity';
 import { Repository } from 'typeorm';
 import { Car } from '../entities/car.entity';
 

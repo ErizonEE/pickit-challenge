@@ -13,6 +13,7 @@ export class TransactionsService {
     private transactionRepository: Repository<Transaction>,
     @InjectRepository(Service)
     private serviceRepository: Repository<Service>,
+    // Move to repository
     @Inject(forwardRef(() => EventEmitter2))
     private eventEmitter: EventEmitter2
   ){}

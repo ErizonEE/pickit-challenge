@@ -17,7 +17,11 @@ describe('CarsController (e2e)', () => {
       id: "3",
       name: "Erizon",
       lastName: "Encina",
-      documentNumber: 94059500
+      documentNumber: 94059500,
+      totalCars: 0,
+      totalTransactions: 0,
+      createAt: (new Date),
+      updateAt: (new Date)
     }
   
     owners.push(
@@ -25,13 +29,21 @@ describe('CarsController (e2e)', () => {
         id: "1",
         name: "Elon",
         lastName: "Musk",
-        documentNumber: null
+        documentNumber: null,
+        totalCars: 0,
+        totalTransactions: 0,
+        createAt: (new Date),
+        updateAt: (new Date)
       },
       {
         id: "2",
         name: "Bill",
         lastName: "Gates",
-        documentNumber: null
+        documentNumber: null,
+        totalCars: 0,
+        totalTransactions: 0,
+        createAt: (new Date),
+        updateAt: (new Date)
       }
     )
 

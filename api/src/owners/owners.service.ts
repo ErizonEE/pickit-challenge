@@ -12,6 +12,7 @@ export class OwnersService {
   constructor(
     @InjectRepository(Owner)
     private ownerRepository: Repository<Owner>,
+    // Move to repository
     @Inject(forwardRef(() => EventEmitter2))
     private eventEmitter: EventEmitter2
   ){}

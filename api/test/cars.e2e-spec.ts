@@ -18,8 +18,12 @@ describe('CarsController (e2e)', () => {
       patent: "456DEF",
       model: "Corolla",
       brand: "Toyota",
+      ownerId: "1",
+      ownerName: "Test",
       year: 2012,
-      color: "white"
+      color: "white",
+      createAt: (new Date),
+      updateAt: (new Date)
     }
   
     cars.push(
@@ -29,7 +33,11 @@ describe('CarsController (e2e)', () => {
         brand: "Fiat",
         model: "Punto",
         year: 2008,
-        color: "Negro"
+        color: "Negro",
+        ownerId: "1",
+        ownerName: "Test",
+        createAt: (new Date),
+        updateAt: (new Date)
       },
       {
         id: "def456",
@@ -37,7 +45,11 @@ describe('CarsController (e2e)', () => {
         brand: "Fiat",
         model: "Punto",
         year: 2009,
-        color: "Negro"
+        color: "Negro",
+        ownerId: "1",
+        ownerName: "Test",
+        createAt: (new Date),
+        updateAt: (new Date)
       }
     )
 

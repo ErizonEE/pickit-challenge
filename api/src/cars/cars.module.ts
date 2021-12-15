@@ -3,7 +3,7 @@ import { TypeOrmModule } from '@nestjs/typeorm';
 import { CarsService } from './cars.service';
 import { CarsController } from './cars.controller';
 import { Car } from './entities/car.entity';
-import { Owner } from 'src/owners/entities/owner.entity';
+import { Owner } from '../owners/entities/owner.entity';
 import { UpdateOwnerName } from './listeners/UpdateOwnerName';
 import { UniquePatentRule } from './validators/UniquePatentRule';
 

@@ -6,7 +6,7 @@ import { EventEmitter2 } from '@nestjs/event-emitter';
 import { Car } from './entities/car.entity';
 import { CreateCarDto } from './dto/create-car.dto';
 import { UpdateCarDto } from './dto/update-car.dto';
-import { Owner } from 'src/owners/entities/owner.entity';
+import { Owner } from '../owners/entities/owner.entity';
 
 @Injectable()
 export class CarsService {

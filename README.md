@@ -24,4 +24,4 @@ El backend corre en: [http://localhost:8000](http://localhost:8000)
 ## Notas
 * Debes tener instalado docker en tu pc y los puertos mencionados en el punto anterior deben estar disponibles
 
-* Las imágenes de los servicios están pensadas para el desarrollo local y se ha compartido el archivo
+* Las imágenes de los servicios están pensadas para el desarrollo local

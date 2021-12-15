@@ -7,7 +7,7 @@ import { TypeOrmModule } from '@nestjs/typeorm';
 import { Service } from './entities/service.entity';
 import { Transaction } from './entities/transaction.entity';
 import { UpdateTransactionInformation } from './listeners/UpdateTransactionInformation';
-import { Car } from 'src/cars/entities/car.entity';
+import { Car } from '../cars/entities/car.entity';
 import { ExistCarRule } from './validators/ExistCarRule';
 import { ExistServicesRule } from './validators/ExistServicesRule';
 @Module({
