@@ -1,4 +1,5 @@
-import { IsString, IsNotEmpty, IsNumber, IsPositive, IsOptional } from "class-validator";
+import { IsString, IsNotEmpty, IsNumber, IsPositive, IsOptional, Validate } from "class-validator";
+import { UniqueDocumentNumberRule } from "../validators/UniqueDocumentNumberRule";
 
 export class CreateOwnerDto {
   @IsString()
@@ -12,5 +13,6 @@ export class CreateOwnerDto {
   @IsOptional()
   @IsNumber()
   @IsPositive()
+  @Validate(UniqueDocumentNumberRule)
   readonly documentNumber: number;
 }

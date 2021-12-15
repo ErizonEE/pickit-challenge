@@ -1,4 +1,5 @@
-import { IsString, IsNotEmpty, IsNumber, IsPositive, MaxLength, IsOptional } from "class-validator";
+import { IsString, IsNotEmpty, IsNumber, IsPositive, MaxLength, IsOptional, Validate } from "class-validator";
+import { UniquePatentRule } from '../validators/UniquePatentRule';
 
 export class CreateCarDto {
   @IsString()
@@ -29,6 +30,7 @@ export class CreateCarDto {
   @IsString({ })
   @IsNotEmpty()
   @MaxLength(10)
+  @Validate(UniquePatentRule)
   readonly patent: string;
 
   @IsString()

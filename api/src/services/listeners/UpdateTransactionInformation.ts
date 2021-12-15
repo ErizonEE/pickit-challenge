@@ -16,8 +16,6 @@ export class UpdateTransactionInformation {
   ){}
   @OnEvent('transaction.created', {async: true})
   async handleTransactionCreatedEvent(eventTransaction: Transaction) {
-    console.log("Entrando al listener");
-    console.log(eventTransaction)
     const transaction = await this.transactionRepository.findOne({ id: eventTransaction.id })
     
     const car = await this.carRepository.findOne({ id: transaction.carId });

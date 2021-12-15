@@ -37,15 +37,11 @@ export class TransactionsService {
 
     return transaction;
   }
-  findByCar(carId: string) {
-    return this.transactionRepository.find({ carId });
+  async findByCar(carId: string) {
+    return await this.transactionRepository.find({ relations: ['services'], where: {carId} });
   }
 
   findAll() {
-    return this.transactionRepository.find();
-  }
-
-  findOne(id: number) {
-    return `This action returns a #${id} transaction`;
+    return this.transactionRepository.find({ relations: ['services'] });
   }
 }

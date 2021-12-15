@@ -2,6 +2,7 @@ import { Controller, Get, Post, Body, Patch, Param, Delete } from '@nestjs/commo
 import { OwnersService } from './owners.service';
 import { CreateOwnerDto } from './dto/create-owner.dto';
 import { UpdateOwnerDto } from './dto/update-owner.dto';
+import { ExistOwner } from './pipes/ExistOwner.pipe';
 
 @Controller('owners')
 export class OwnersController {
@@ -18,17 +19,17 @@ export class OwnersController {
   }
 
   @Get(':id')
-  findOne(@Param('id') id: string) {
+  findOne(@Param('id', ExistOwner) id: string) {
     return this.ownersService.findOne(id);
   }
 
   @Patch(':id')
-  update(@Param('id') id: string, @Body() updateOwnerDto: UpdateOwnerDto) {
+  update(@Param('id', ExistOwner) id: string, @Body() updateOwnerDto: UpdateOwnerDto) {
     return this.ownersService.update(id, updateOwnerDto);
   }
 
   @Delete(':id')
-  remove(@Param('id') id: string) {
+  remove(@Param('id', ExistOwner) id: string) {
     return this.ownersService.remove(id);
   }
 }

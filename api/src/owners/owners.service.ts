@@ -27,21 +27,11 @@ export class OwnersService {
   }
 
   async findOne(id: string) {
-    const owner = await this.ownerRepository.findOne({id});
-
-    if(!owner) {
-      throw new NotFoundException("Owner Resource Not Found");
-    }
-
-    return owner;
+    return await this.ownerRepository.findOne({id});
   }
 
   async update(id: string, updateOwnerDto: UpdateOwnerDto) {
     let owner = await this.ownerRepository.findOne({id});
-
-    if(!owner) {
-      throw new NotFoundException("Owner Resource Not Found");
-    }
 
     owner = this.ownerRepository.merge(owner, updateOwnerDto);
 
@@ -54,10 +44,6 @@ export class OwnersService {
 
   async remove(id: string) {
     const owner = await this.ownerRepository.findOne({ id });
-
-    if(!owner) {
-      throw new NotFoundException("Owner Resource Not Found");
-    }
 
     return this.ownerRepository.remove(owner);
   }

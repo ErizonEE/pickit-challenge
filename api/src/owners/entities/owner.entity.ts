@@ -1,4 +1,4 @@
-import { PrimaryGeneratedColumn, Column, Entity } from 'typeorm';
+import { PrimaryGeneratedColumn, Column, Entity, CreateDateColumn, UpdateDateColumn } from 'typeorm';
 
 @Entity()
 export class Owner {
@@ -19,4 +19,10 @@ export class Owner {
 
   @Column({ type: "int", default: 0 })
   totalTransactions: number;
+
+  @CreateDateColumn()
+  readonly createAt: Date;
+
+  @UpdateDateColumn()
+  readonly updateAt: Date;
 }

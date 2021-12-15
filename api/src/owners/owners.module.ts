@@ -5,10 +5,11 @@ import { TypeOrmModule } from '@nestjs/typeorm';
 import { Owner } from './entities/owner.entity';
 import { Car } from 'src/cars/entities/car.entity';
 import { UpdateCarAmount } from './listeners/UpdateCarAmount';
+import { UniqueDocumentNumberRule } from './validators/UniqueDocumentNumberRule';
 
 @Module({
   imports: [ TypeOrmModule.forFeature([Owner, Car]) ],
   controllers: [OwnersController],
-  providers: [OwnersService, UpdateCarAmount]
+  providers: [OwnersService, UpdateCarAmount, UniqueDocumentNumberRule]
 })
 export class OwnersModule {}

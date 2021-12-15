@@ -7,4 +7,8 @@ export class UpdateCarDto extends PartialType(CreateCarDto) {
   @IsOptional()
   @Exclude()
   readonly ownerId: string;
+
+  @IsOptional()
+  @Exclude()
+  readonly patent: string;
 }

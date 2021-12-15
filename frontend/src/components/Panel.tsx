@@ -17,6 +17,16 @@ export default function Panel() {
               >
                 Propietarios
             </Button>
+            <Button
+              fullWidth
+              component={RouterLink}
+              to="/automotores"
+              style={{margin: '2px 2px'}}
+              variant="outlined"
+              color="primary"
+              >
+                Automotores
+            </Button>
             <Button 
               fullWidth
               component={RouterLink}
@@ -25,7 +35,7 @@ export default function Panel() {
               variant="outlined"
               color="primary"
               >
-              Trabajos
+                Trabajos Realizados
             </Button>
       </div>
   );

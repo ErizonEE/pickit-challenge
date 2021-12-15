@@ -2,17 +2,14 @@ version: "3.7"
   
 services:
   frontend:
-    image: node:14
+    build: .
     working_dir: /app
-    entrypoint: yarn start
     volumes:
       - ./frontend:/app
     ports:
       - 8080:3000
   api:
-    image: node:14
-    working_dir: /app
-    entrypoint: yarn start
+    build: .
     depends_on:
       - database
     volumes:
@@ -22,6 +19,8 @@ services:
   # Infrastructure Services
   database: 
     image: mysql
+    cap_add:
+      - SYS_NICE
     environment:
       - MYSQL_ROOT_PASSWORD=secret
       - MYSQL_DATABASE=pickit

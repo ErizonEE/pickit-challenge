@@ -1,9 +1,12 @@
 import { Exclude } from "class-transformer";
-import { IsArray, IsNotEmpty, IsNumber, IsOptional, IsString, IsPositive } from "class-validator";
+import { IsArray, IsNotEmpty, IsNumber, IsOptional, IsString, IsPositive, Validate } from "class-validator";
+import { ExistCarRule } from '../validators/ExistCarRule';
+import { ExistServicesRule } from "../validators/ExistServicesRule";
 
 export class CreateTransactionDto {
   @IsString()
   @IsNotEmpty()
+  @Validate(ExistCarRule)
   readonly carId: string;
 
   @IsNumber()
@@ -14,5 +17,6 @@ export class CreateTransactionDto {
 
   @IsArray()
   @IsNotEmpty()
+  @Validate(ExistServicesRule)
   servicesId: string[]
 }
